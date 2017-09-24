@@ -1,8 +1,8 @@
 [user]
-	name = Ben Koren
-	email = benkoren@gmail.com
+    name = Ben Koren
+    email = benkoren@gmail.com
 [color]
-	ui = true
+    ui = true
 [alias]
     # Concise git status
     s = status -sb
@@ -10,42 +10,42 @@
     # Concise git diff
     d = diff
 
-	# Concise tree view of all commits in the ancestry of the current commit
-	lg = log --graph --date-order --format=format:'%C(blue)%an%C(reset)%C(cyan)%d %C(reset)%C(white)%s%C(reset) %C(green)(%ar)%C(reset) %C(yellow)%h%C(reset)'
+    # Concise tree view of all commits in the ancestry of the current commit
+    lg = log --graph --date-order --format=format:'%C(blue)%an%C(reset)%C(cyan)%d %C(reset)%C(white)%s%C(reset) %C(green)(%ar)%C(reset) %C(yellow)%h%C(reset)'
 
-	# Concise tree view of all commits in ALL branches
-	lga = !git lg --all
+    # Concise tree view of all commits in ALL branches
+    lga = !git lg --all
 
-	# Detailed tree view of all commits in the ancestry of the current commit
-	lgg = log --graph --date-order --format=format:'%C(blue)%an%C(reset)%C(cyan)%d %C(reset) %C(green)(%ar)%C(reset) %C(yellow)%h%C(reset)%n%n%B' --name-status
+    # Detailed tree view of all commits in the ancestry of the current commit
+    lgg = log --graph --date-order --format=format:'%C(blue)%an%C(reset)%C(cyan)%d %C(reset) %C(green)(%ar)%C(reset) %C(yellow)%h%C(reset)%n%n%B' --name-status
 
-	# Detailed tree view of all commits in ALL branches
-	lgga = !git lgg --all
+    # Detailed tree view of all commits in ALL branches
+    lgga = !git lgg --all
 
-	# What have I done in the last 12 hours?
-	time = log --graph --date-order --all --no-merges --author=bkoren --since='12 hours' --format=format:'%s'
+    # What have I done in the last 12 hours?
+    time = log --graph --date-order --all --no-merges --author=bkoren --since='12 hours' --format=format:'%s'
 
-	# Just like 'git show' except shows more lines for context
-	sh = show -U40
+    # Just like 'git show' except shows more lines for context
+    sh = show -U40
 
-	# Pulls changes from the remote. If there are any local commits, it'll rebase them to come after the commits pulled down. The --prune option removes remote-tracking branches that no longer exist on the remote.
-	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+    # Pulls changes from the remote. If there are any local commits, it'll rebase them to come after the commits pulled down. The --prune option removes remote-tracking branches that no longer exist on the remote.
+    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 
-	# Adds all changes including untracked files and creates a commit
-	save = !git add -A && git commit -m 'SAVEPOINT'
+    # Adds all changes including untracked files and creates a commit
+    save = !git add -A && git commit -m 'SAVEPOINT'
 
-	# Resets the previous commit, but keeps all the changes from that commit in the working directory
-	undo = reset HEAD~1 --mixed
+    # Resets the previous commit, but keeps all the changes from that commit in the working directory
+    undo = reset HEAD~1 --mixed
 
-	# Use this instead of `git reset HEAD --hard`!!! Run `git reflog` to view savepoints.
-	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+    # Use this instead of `git reset HEAD --hard`!!! Run `git reflog` to view savepoints.
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
     # Deletes every branch that's been merged into master except master
     bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 [push]
-	default = current
+    default = current
 
 
