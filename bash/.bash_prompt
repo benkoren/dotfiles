@@ -129,19 +129,15 @@ prompt_git() {
 
 # Check to see if the last command succeeded or failed
 if [ $? -eq 0 ]; then
-    arrow="\[${Blue}\]➠  \[${Reset}\]"
+    arrow="${Blue}➠  ${Reset}"
 else
-    arrow="\[${Green}\]➠  \[${Reset}\]"
+    arrow="${Green}➠  ${Reset}"
 fi
 
 
-# Display user & hostname when on SSH
-if [[ "${SSH_TTY}" ]]; then
-	hostSSH="\[${Red}\](SSH) \u@\h \[${Reset}\]";
-fi;
-
-PS1="\n\[${hostSSH}\]\[${IGreen}\]\w\[${Reset}\] \$(prompt_git)\n\[${arrow}\]";
+PS1="\n\u@\h ${IGreen}\w${Reset} \$(prompt_git)\n${BICyan}#${Reset} ";
 export PS1;
 
-PS2="\[${Yellow}\]→ \[${Reset}\]";
+PS2="${BICyan}#${Reset} "
 export PS2;
+

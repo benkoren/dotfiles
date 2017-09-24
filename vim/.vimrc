@@ -89,7 +89,7 @@ endif
 let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark
 syntax enable
-colorscheme Monokai
+colorscheme gruvbox
 if &term =~ '256color'
     " Disable Background Color Erase (BCE) so that color schemes
     " work properly when Vim is used inside tmux and GNU screen.
@@ -189,7 +189,7 @@ let skeletons#skeletonsDir = "~/.vim/skeletons"
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.

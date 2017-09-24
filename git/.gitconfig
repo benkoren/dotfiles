@@ -1,33 +1,45 @@
 [user]
-	name = Shane Smith
-	email = voodoogq@gmail.com
-
-[core]
-	excludesfile = ~/.gitignore_global
-
+	name = Ben Koren
+	email = benkoren@gmail.com
 [color]
-  ui = true
-
+	ui = true
 [alias]
-  co = checkout
-  ci = commit
-  st = status -sb
-  br = branch
-  hist = log --pretty=format:\"%h %ad [%an] | %C(auto)%s%d\" --date=relative --all
-  histt = log --pretty=format:\"%h %ad [%an] | %C(auto)%s%d\" --date=local --all --date-order
-  histg = log --pretty=format:\"%h %ad [%an] | %C(auto)%s%d\" --graph --date=relative --all
-  type = cat-file -t
-  dump = cat-file -p
-  skipped = !git ls-files -v | grep ^[a-z]
-  skip = !git update-index --assume-unchanged
-  unskip = !git update-index --no-assume-unchanged
-  histb = log --graph --decorate --oneline --simplify-by-decoration --all
-  # list branches by commit date
-  branches = for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/
-  la = config user.email "shane@linuxacademy.com"
-
-[credential]
-  helper = osxkeychain
-
+	# Concise tree view of all commits in the ancestry of the current commit
+	lg = log --graph --date-order --format=format:'%C(blue)%an%C(reset)%C(cyan)%d %C(reset)%C(white)%s%C(reset) %C(green)(%ar)%C(reset) %C(yellow)%h%C(reset)'
+	
+	# Concise tree view of all commits in ALL branches
+	lga = !git lg --all
+	
+	# Detailed tree view of all commits in the ancestry of the current commit
+	lgg = log --graph --date-order --format=format:'%C(blue)%an%C(reset)%C(cyan)%d %C(reset) %C(green)(%ar)%C(reset) %C(yellow)%h%C(reset)%n%n%B' --name-status
+	
+	# Detailed tree view of all commits in ALL branches
+	lgga = !git lgg --all
+	
+	# What have I done in the last 12 hours?
+	time = log --graph --date-order --all --no-merges --author=bkoren --since='12 hours' --format=format:'%s'
+	
+	# Just like 'git show' except shows more lines for context
+	sh = show -U40
+	
+	# Pulls changes from the remote. If there are any local commits, it'll rebase them to come after the commits pulled down. The --prune option removes remote-tracking branches that no longer exist on the remote.
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	
+	# Adds all changes including untracked files and creates a commit
+	save = !git add -A && git commit -m 'SAVEPOINT'
+	
+	# Resets the previous commit, but keeps all the changes from that commit in the working directory
+	undo = reset HEAD~1 --mixed
+	
+	# Use this instead of `git reset HEAD --hard`!!! Run `git reflog` to view savepoints.
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+    	
+    # Deletes every branch that's been merged into master except master
+    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+    	
+[branch]
+	autosetuprebase = always
 [push]
-  default = simple
+	default = current
+
+
