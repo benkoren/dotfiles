@@ -21,7 +21,7 @@ set clipboard=unnamed
 " start searching before hitting enter
 set incsearch
 " Make sure cursor stays centered on the screen
-set scrolloff=999
+set scrolloff=15
 " Put filename in statusline
 set statusline+=%{fugitive#statusline()}
 set laststatus=2  " always show status line
