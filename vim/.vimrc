@@ -161,6 +161,18 @@ command! -bang -nargs=* Findi call fzf#vim#grep('rg --column --line-number --no-
 " set default list style for Explore
 let g:netrw_liststyle=4
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+
+" NERDtree like setup
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
+
 "===============================================================================
 
 " VIM_MARKDOWN_PREVIEW
