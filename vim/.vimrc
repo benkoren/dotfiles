@@ -252,7 +252,7 @@ nnoremap <silent> <C-n> :call NumberToggle()<CR>
 nnoremap <silent> <C-m> :call NumberOffToggle()<CR>
 "===============================================================================
 
-" CODE_FOLDEING
+" CODE_FOLDING
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
