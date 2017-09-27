@@ -135,9 +135,9 @@ else
 fi
 
 
-PS1="\n\u@\h ${IGreen}\w${Reset} \$(prompt_git)\n${BICyan}#${Reset} ";
+PS1="\n\u@\h \[${IGreen}\]\w\[${Reset}\] \$(prompt_git)\n\[${BICyan}\]#\[${Reset}\] ";
 export PS1;
 
-PS2="${BICyan}#${Reset} "
+PS2="\[${BICyan}\]>\[${Reset}\] "
 export PS2;
 
