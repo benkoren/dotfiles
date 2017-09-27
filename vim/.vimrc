@@ -23,13 +23,13 @@ set incsearch
 " Make sure cursor stays centered on the screen
 set scrolloff=15
 " Put filename in statusline
-set statusline+=%{fugitive#statusline()}
+"set statusline+=%{fugitive#statusline()}
 set laststatus=2  " always show status line
 " Paste Toggle
 set pastetoggle=<F2>
 set showmode
 " It's useful to show the buffer number in the status line.
-set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+"set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " Automatically strip whitespace on save.
 autocmd BufWritePre * StripWhitespace
@@ -124,11 +124,11 @@ set smartindent
 
 " AIRLINE
 " Set airline top tab and colors
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme='powerlineish'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline_theme='deus'
+let g:airline_powerline_fonts = 0
+"let g:airline#extensions#tabline#show_tab_type = 0
 "===============================================================================
 
 "FZF_AND_RIPGREP (Fuzzy finding)
