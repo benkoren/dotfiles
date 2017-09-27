@@ -270,6 +270,10 @@ vnoremap <Space> zf
 
 set foldmethod=syntax
 
+" Open all folds by default
+set foldlevel=99
+set nofoldenable
+
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
