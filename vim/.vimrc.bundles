@@ -43,6 +43,7 @@ Plugin 'duff/vim-scratch'
 Plugin 'mxw/vim-jsx'
 Plugin 'pgilad/vim-skeletons'
 Plugin 'SirVer/ultisnips'
+Bundle "honza/vim-snippets"
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plugin 'junegunn/fzf.vim'
 Plugin 'Shougo/neocomplete.vim'

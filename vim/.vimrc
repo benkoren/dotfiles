@@ -17,7 +17,7 @@ set fo-=t
 " GitGutter Config
 set updatetime=750
 " Make it so clipboard copy/paste works with Mac OSX
-set clipboard=unnamed
+"set clipboard=unnamed
 " start searching before hitting enter
 set incsearch
 " Make sure cursor stays centered on the screen
