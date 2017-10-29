@@ -112,8 +112,8 @@ endif
 "===============================================================================
 
 " CODE_INDENTATION
-" Softtabs, 4 spaces by defaults
-set tabstop=4 softtabstop=0 shiftwidth=4 smarttab expandtab
+" Softtabs, 2 spaces by default2
+set tabstop=2 softtabstop=0 shiftwidth=2 smarttab expandtab
 " Switch to a 2 space tab on these files
 autocmd FileType sass,scss,ruby,erb,yml,yaml,json setlocal shiftwidth=2 tabstop=2
 set shiftround
