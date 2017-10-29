@@ -6,17 +6,11 @@ windows:
       layout: main-vertical
       panes:
         - vim
-        - bundle exec guard
         - git s
-  - console:
-      layout: main-vertical
-      panes:
-        - rails c
-        - tail -f log/development.log
         - rails:
           - bundle install
-          - bundle exec rake db:migrate
-          - bundle exec rake db:seed
+          - rails db:migrate
+          - rails db:seed
           - rails s -p 8080 -b 0.0.0.0
   - terminal: #empty
 
