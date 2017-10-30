@@ -8,4 +8,5 @@ windows:
         - editor:
           - cd _posts
           - ls -lha
-        - jekyll serve --watch
+        - git s
+        - jekyll serve --watch --drafts
