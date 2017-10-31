@@ -13,5 +13,8 @@ For convenience, the `.bash_profile` in this repo will source any files matching
 
 ## Vim
   - make sure vim config are installed with `stow vim`
-  - run `./install_vundle.sh`
+  - run `./scripts/install_vundle.sh`
   - execute `:PluginInstall` inside vim
+
+## Shell theme
+  - run `./scripts/install_base16.sh`
