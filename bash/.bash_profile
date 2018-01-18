@@ -19,6 +19,6 @@ source ~/.bash_profile.local
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
-export PATH=":$HOME/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rvm/gems/ruby-2.3.1/bin:.nvm/versions/node/v5.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
+export PATH=":$HOME/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rvm/gems/ruby-2.3.1/bin:.nvm/versions/node/v5.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
 
 $HOME/.config/base16-shell/scripts/base16-gruvbox-dark-medium.sh
