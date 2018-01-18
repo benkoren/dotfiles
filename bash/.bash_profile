@@ -15,6 +15,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 source /usr/local/etc/bash_completion.d/tmuxinator
+source ~/.bash_profile.local
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
