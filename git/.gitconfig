@@ -43,6 +43,9 @@
     # Deletes every branch that's been merged into master except master
     bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 
+    # Amends commit and updates to current timestamp
+    cad = git commit --amend --date="$(date -R)"
+
 [branch]
     autosetuprebase = always
 [push]
