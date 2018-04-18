@@ -7,8 +7,14 @@
     # Concise git status
     s = status -sb
 
+    # Show local branches, sorted by date descending
+    b = branch --sort=-committerdate
+
     # Concise git diff
     d = diff
+    dm = diff origin/master
+    dn = diff --name-only
+    dnm = diff --name-only origin/master
 
     # Concise tree view of all commits in the ancestry of the current commit
     lg = log --graph --date-order --format=format:'%C(blue)%an%C(reset)%C(cyan)%d %C(reset)%C(white)%s%C(reset) %C(green)(%ar)%C(reset) %C(yellow)%h%C(reset)'
@@ -44,7 +50,7 @@
     bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 
     # Amends commit and updates to current timestamp
-    cad = commit --amend --date="$(date -R)"
+    cad = commit --amend --date="now"
 
 [branch]
     autosetuprebase = always
