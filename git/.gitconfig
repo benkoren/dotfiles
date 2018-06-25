@@ -13,8 +13,8 @@
     # Concise git diff
     d = diff
     dm = diff origin/master
-    dn = diff --name-only
-    dnm = diff --name-only origin/master
+    dn = diff --name-status
+    dnm = diff --name-status origin/master
 
     # Concise tree view of all commits in the ancestry of the current commit
     lg = log --graph --date-order --format=format:'%C(blue)%an%C(reset)%C(cyan)%d %C(reset)%C(white)%s%C(reset) %C(green)(%ar)%C(reset) %C(yellow)%h%C(reset)'
